@@ -58,32 +58,6 @@
         "font-awesome"
     ],
 
-    "progressive": {
-      "manifest": {
-         "name": "Employee Directory",
-         "short_name": "ED",
-         "icons": [
-            {
-               "src": "resources/ed96.png",
-               "sizes": "96x96"
-            },
-            {
-               "src": "resources/ed192.png",
-               "sizes": "192x192"
-            },
-            {
-               "src": "resources/ed256.png",
-               "sizes": "256x256"
-            }
-         ],
-         "theme_color": "#054059",
-         "background_color": "#054059",
-         "display": "standalone",
-         "orientation": "portrait",
-         "start_url": "/index.html"
-      }
-   },
-
     /**
      * Fashion build configuration properties.
      */
