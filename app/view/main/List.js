@@ -1,12 +1,12 @@
 /**
  * This view is an example list of people.
  */
-Ext.define('ED.view.main.List', {
+Ext.define('PWA.view.main.List', {
     extend: 'Ext.grid.Grid',
     xtype: 'mainlist',
 
     requires: [
-        'ED.store.Personnel'
+        'PWA.store.Personnel'
     ],
 
     title: 'Personnel',

@@ -3,10 +3,10 @@
  * calls Ext.application(). This is the ideal place to handle application launch and
  * initialization details.
  */
-Ext.define('ED.Application', {
+Ext.define('PWA.Application', {
     extend: 'Ext.app.Application',
     
-    name: 'ED',
+    name: 'PWA',
 
     stores: [
         // TODO: add global / shared stores here

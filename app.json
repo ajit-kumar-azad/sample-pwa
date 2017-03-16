@@ -2,7 +2,7 @@
     /**
      * The application's namespace.
      */
-    "name": "ED",
+    "name": "PWA",
     
     /**
      * The version of the application.
@@ -13,52 +13,7 @@
      * The relative path to the application's markup file (html, jsp, asp, etc.).
      */
     "indexHtmlPath": "index.html",
-
-    /**
-     * Comma-separated string with the paths of directories or files to search. Any classes
-     * declared in these locations will be available in your class "requires" or in calls
-     * to "Ext.require". The "app.dir" variable below is expanded to the path where the
-     * application resides (the same folder in which this file is located).
-     */
-    "classpath": [
-        "app",
-        "${toolkit.name}/src"
-    ],
-
-    /**
-     * Comma-separated string with the paths of directories or files to search. Any classes
-     * declared in these locations will be automatically required and included in the build.
-     * If any file defines an Ext JS override (using Ext.define with an "override" property),
-     * that override will in fact only be included in the build if the target class specified
-     * in the "override" property is also included.
-     */
-    "overrides": [
-        "overrides",
-        "${toolkit.name}/overrides"
-    ],
-
-    /**
-     * The Sencha Framework for this application: "ext" or "touch".
-     */
-    "framework": "ext",
-    
-    
-    
-    
-    /**
-     * The list of required packages (with optional versions; default is "latest").
-     *
-     * For example,
-     *
-     *      "requires": [
-     *          "charts"
-     *      ]
-     */
-    "requires": [
-        "font-awesome"
-    ],
-
-    "progressive": {
+"progressive": {
       "manifest": {
          "name": "Employee Directory",
          "short_name": "ED",
@@ -85,6 +40,60 @@
    },
 
     /**
+     * Comma-separated string with the paths of directories or files to search. Any classes
+     * declared in these locations will be available in your class "requires" or in calls
+     * to "Ext.require". The "app.dir" variable below is expanded to the path where the
+     * application resides (the same folder in which this file is located).
+     */
+    "classpath": [
+        "app"
+    ],
+
+    /**
+     * Comma-separated string with the paths of directories or files to search. Any classes
+     * declared in these locations will be automatically required and included in the build.
+     * If any file defines an Ext JS override (using Ext.define with an "override" property),
+     * that override will in fact only be included in the build if the target class specified
+     * in the "override" property is also included.
+     */
+    "overrides": [
+        "overrides"
+    ],
+
+    /**
+     * The Sencha Framework for this application: "ext" or "touch".
+     */
+    "framework": "ext",
+    
+    
+    /**
+     * The toolkit to use. Select either "classic" or "modern".
+     */
+    "toolkit": "modern",
+    
+    
+    
+    /**
+     * The name of the theme for this application.
+     */
+    
+    "theme": "theme-triton",
+    
+    
+    /**
+     * The list of required packages (with optional versions; default is "latest").
+     *
+     * For example,
+     *
+     *      "requires": [
+     *          "charts"
+     *      ]
+     */
+    "requires": [
+        "font-awesome"
+    ],
+
+    /**
      * Fashion build configuration properties.
      */
     "fashion": {
@@ -102,13 +111,13 @@
     "sass": {
         /**
          * The root namespace to use when mapping *.scss files to classes in the
-         * sass/src and sass/var directories. For example, "ED.view.Foo" would
-         * map to "sass/src/view/Foo.scss". If we changed this to "ED.view" then
+         * sass/src and sass/var directories. For example, "PWA.view.Foo" would
+         * map to "sass/src/view/Foo.scss". If we changed this to "PWA.view" then
          * it would map to "sass/src/Foo.scss". To style classes outside the app's
          * root namespace, change this to "". Doing so would change the mapping of
-         * "ED.view.Foo" to "sass/src/ED/view/Foo.scss".
+         * "PWA.view.Foo" to "sass/src/PWA/view/Foo.scss".
          */
-        "namespace": "ED",
+        "namespace": "PWA",
 
         /**
          * Generated sass source settings
@@ -125,6 +134,11 @@
          *
          */
          
+        "generated": {
+            "var": "sass/save.scss",
+            "src": "sass/save"
+        },
+        
 
         /**
          * Comma-separated list of files or folders containing extra Sass. These
@@ -146,8 +160,7 @@
          *      +-----------------+
          */
         "etc": [
-            "sass/etc/all.scss",
-            "${toolkit.name}/sass/etc/all.scss"
+            "sass/etc/all.scss"
         ],
 
         /**
@@ -172,8 +185,7 @@
          */
         "var": [
             "sass/var/all.scss",
-            "sass/var",
-            "${toolkit.name}/sass/var"
+            "sass/var"
         ],
 
         /**
@@ -193,8 +205,7 @@
          *      +-----------------+
          */
         "src": [
-            "sass/src",
-            "${toolkit.name}/sass/src"
+            "sass/src"
         ]
     },
 
@@ -241,35 +252,15 @@
      */
     "js": [
         {
+            "path": "${framework.dir}/build/ext-modern-all-debug.js"
+        },
+        {
             "path": "app.js",
             "bundle": true
         }
     ],
 
     
-    /**
-     * Settings specific to classic toolkit builds.
-     */
-    "classic": {
-        "js": [
-            // Remove this entry to individually load sources from the framework.
-            {
-                "path": "${framework.dir}/build/ext-all-rtl-debug.js"
-            }
-        ]
-    },
-
-    /**
-     * Settings specific to modern toolkit builds.
-     */
-    "modern": {
-        "js": [
-            // Remove this entry to individually load sources from the framework.
-            {
-                "path": "${framework.dir}/build/ext-modern-all-debug.js"
-            }
-        ]
-    },
 
     /**
      * List of all CSS assets in the right inclusion order.
@@ -374,7 +365,7 @@
      * form:
      *
      *      "bootstrap": {
-     *          "base": "${app.dir},
+     *          "base": "${app.dir}",
      *          "manifest": "bootstrap.json",
      *          "microloader": "bootstrap.js",
      *          "css": "bootstrap.css"
@@ -393,8 +384,6 @@
      */
     "bootstrap": {
         "base": "${app.dir}",
-        
-        "manifest": "${build.id}.json",
         
         "microloader": "bootstrap.js",
         "css": "bootstrap.css"
@@ -448,15 +437,8 @@
     
     "output": {
         "base": "${workspace.build.dir}/${build.environment}/${app.name}",
-        "page": "index.html",
-        "manifest": "${build.id}.json",
-        "js": "${build.id}/app.js",
         "appCache": {
             "enable": false
-        },
-        "resources": {
-            "path": "${build.id}/resources",
-            "shared": "resources"
         }
     },
     
@@ -479,7 +461,7 @@
     
     "cache": {
         "enable": false,
-        "deltas": "${build.id}/deltas"
+        "deltas": true
     },
     
 
@@ -514,12 +496,6 @@
         {
             "path": "resources",
             "output": "shared"
-        },
-        {
-            "path": "${toolkit.name}/resources"
-        },
-        {
-            "path": "${build.id}/resources"
         }
     ],
 
@@ -529,9 +505,11 @@
      * deltas between updates.
      */
     
-    "archivePath": "archive/${build.id}",
+    "archivePath": "archive",
     
 
+
+    "slicer": null,
 
 
     /**
@@ -541,47 +519,7 @@
      * selecting the desired build profile by setting "Ext.manifest" to one of these
      * names.
      *
-     *     "builds": {
-     *         "classic": {
-     *             "toolkit": "classic",
-     *             "theme": "theme-neptune"
-     *         },
-     *
-     *         "modern": {
-     *             "toolkit": "modern",
-     *             "theme": "theme-neptune"
-     *         }
-     *     }
-     *
      */
-    
-    "builds": {
-        "classic": {
-            "toolkit": "classic",
-            
-            "theme": "theme-triton",
-            
-            "sass": {
-                "generated": {
-                    "var": "classic/sass/save.scss",
-                    "src": "classic/sass/save"
-                }
-            }
-        },
-
-        "modern": {
-            "toolkit": "modern",
-            
-            "theme": "theme-triton",
-            
-            "sass": {
-                "generated": {
-                    "var": "modern/sass/save.scss",
-                    "src": "modern/sass/save"
-                }
-            }
-        }
-    },
     
     
     /**
@@ -596,5 +534,5 @@
      * Uniquely generated id for this application, used as prefix for localStorage keys.
      * Normally you should never change this value.
      */
-    "id": "356e13c3-0df0-4bba-be18-fd92e85d9c48"
+    "id": "e5df20fc-b547-4540-8aec-2a205dc91f8b"
 }

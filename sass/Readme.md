@@ -15,19 +15,19 @@ This folder contains misc. support code for Sass builds (global functions, etc.)
 
 This folder contains Sass files defining CSS rules corresponding to classes
 included in the application's JavaScript code build. By default, files in this 
-folder are mapped to the application's root namespace, 'ED'. This is set in
+folder are mapped to the application's root namespace, 'PWA'. This is set in
 `"app.json"`:
 
     "sass": {
-        "namespace": "ED"
+        "namespace": "PWA"
     }
 
 ### ./sass/var
 
 This folder contains Sass files defining Sass variables corresponding to classes
 included in the application's JavaScript code build. By default, files in this 
-folder are mapped to the application's root namespace, 'ED' in the same way
-as `"ED/sass/src"`.
+folder are mapped to the application's root namespace, 'PWA' in the same way
+as `"PWA/sass/src"`.
 
 ## Slicing
 

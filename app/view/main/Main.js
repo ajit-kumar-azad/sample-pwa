@@ -5,16 +5,16 @@
  *
  * TODO - Replace the content of this view to suit the needs of your application.
  */
-Ext.define('ED.view.main.Main', {
+Ext.define('PWA.view.main.Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'app-main',
 
     requires: [
         'Ext.MessageBox',
 
-        'ED.view.main.MainController',
-        'ED.view.main.MainModel',
-        'ED.view.main.List'
+        'PWA.view.main.MainController',
+        'PWA.view.main.MainModel',
+        'PWA.view.main.List'
     ],
 
     controller: 'main',
