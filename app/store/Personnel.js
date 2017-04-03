@@ -12,7 +12,7 @@ Ext.define('PWA.store.Personnel', {
         type: 'ajax',
 
 	// @sw-cache
-	url: 'data/personnel.json',
+	url: 'resources/personnel.json',
         reader: {
             type: 'json',
             rootProperty: 'items'
