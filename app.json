@@ -15,19 +15,19 @@
     "indexHtmlPath": "index.html",
 "progressive": {
       "manifest": {
-         "name": "Employee Directory",
-         "short_name": "ED",
+         "name": "Progressive App",
+         "short_name": "PWA",
          "icons": [
             {
-               "src": "resources/ed96.png",
+               "src": "resources/pwa96.png",
                "sizes": "96x96"
             },
             {
-               "src": "resources/ed192.png",
+               "src": "resources/pwa192.png",
                "sizes": "192x192"
             },
             {
-               "src": "resources/ed256.png",
+               "src": "resources/pwa256.png",
                "sizes": "256x256"
             }
          ],
